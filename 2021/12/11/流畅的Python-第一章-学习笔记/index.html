@@ -1,0 +1,295 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>流畅的Python-第一章-学习笔记 | ShengyueJiang</title><meta name="keywords" content="流畅的Python"><meta name="author" content="ShengyueJiang"><meta name="copyright" content="ShengyueJiang"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="python数据类型 不管在那种框架下书写程序，我们都会花费大量的时间去实现那些会被框架本身调用的方法。  python在碰到特殊的句法的时候，会使用特殊方法去激活一些基本的对象操作，这些特殊方法的名字以两个下划线开头，以两个下划线结尾。  例如当我们使用某种根据索引找到值的语法时，实际上python是在调用一个名为getitem的方法，为了实际求得某值实际上，解释器会调用这个方法来完成。   这">
+<meta property="og:type" content="article">
+<meta property="og:title" content="流畅的Python-第一章-学习笔记">
+<meta property="og:url" content="http://example.com/2021/12/11/%E6%B5%81%E7%95%85%E7%9A%84Python-%E7%AC%AC%E4%B8%80%E7%AB%A0-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="ShengyueJiang">
+<meta property="og:description" content="python数据类型 不管在那种框架下书写程序，我们都会花费大量的时间去实现那些会被框架本身调用的方法。  python在碰到特殊的句法的时候，会使用特殊方法去激活一些基本的对象操作，这些特殊方法的名字以两个下划线开头，以两个下划线结尾。  例如当我们使用某种根据索引找到值的语法时，实际上python是在调用一个名为getitem的方法，为了实际求得某值实际上，解释器会调用这个方法来完成。   这">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://images.idgesg.net/images/article/2017/08/python-100732474-large.3x2.jpg">
+<meta property="article:published_time" content="2021-12-11T03:21:56.000Z">
+<meta property="article:modified_time" content="2021-12-11T08:48:43.693Z">
+<meta property="article:author" content="ShengyueJiang">
+<meta property="article:tag" content="流畅的Python">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://images.idgesg.net/images/article/2017/08/python-100732474-large.3x2.jpg"><link rel="shortcut icon" href="/img/avatar_img.png"><link rel="canonical" href="http://example.com/2021/12/11/%E6%B5%81%E7%95%85%E7%9A%84Python-%E7%AC%AC%E4%B8%80%E7%AB%A0-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"We didn't find any results for the search: ${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: 'days',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '流畅的Python-第一章-学习笔记',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-12-11 16:48:43'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/background.css"><meta name="generator" content="Hexo 5.4.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar_img.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">14</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">6</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">3</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> Social Contact</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/messageboard/"><i class="fa-fw fa fa-paper-plane"></i><span> messageboard</span></a></li><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></li><li><a class="site-page child" href="/Talks/"><i class="fa-fw fa fa-commenting"></i><span> Talks</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://images.idgesg.net/images/article/2017/08/python-100732474-large.3x2.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">ShengyueJiang</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> Social Contact</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/messageboard/"><i class="fa-fw fa fa-paper-plane"></i><span> messageboard</span></a></li><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></li><li><a class="site-page child" href="/Talks/"><i class="fa-fw fa fa-commenting"></i><span> Talks</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">流畅的Python-第一章-学习笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2021-12-11T03:21:56.000Z" title="Created 2021-12-11 11:21:56">2021-12-11</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2021-12-11T08:48:43.693Z" title="Updated 2021-12-11 16:48:43">2021-12-11</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Python/">Python</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="流畅的Python-第一章-学习笔记"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="python数据类型"><a href="#python数据类型" class="headerlink" title="python数据类型"></a>python数据类型</h1><ul>
+<li><p>不管在那种框架下书写程序，我们都会花费大量的时间去实现那些会被框架本身调用的方法。</p>
+</li>
+<li><p>python在碰到特殊的句法的时候，会使用特殊方法去激活一些基本的对象操作，这些特殊方法的名字以两个下划线开头，以两个下划线结尾。</p>
+<blockquote>
+<p>例如当我们使用某种根据索引找到值的语法时，实际上python是在调用一个名为<strong>getitem</strong>的方法，为了实际求得某值实际上，解释器会调用这个方法来完成。</p>
+</blockquote>
+</li>
+<li><p>这些特殊的方法可以让我们自己的对象实现和支持以下的语言架构，并且与其交互：</p>
+<ul>
+<li>迭代</li>
+<li>集合类</li>
+<li>属性访问</li>
+<li>运算符重载</li>
+<li>函数和方法的调用</li>
+<li>对象的创建和销毁</li>
+<li>字符串表示形式和格式化</li>
+<li>管理上下文</li>
+</ul>
+<blockquote>
+<p>博主理解：在我们要实现某个类的时候，我们有时候会花费大量的时间来进行python已经准备好的功能，这会增加我们的工作量，做重复的共做，一旦我们使用了魔术方法，我们就可以赋予我们自己的对象python的某些内置功能，包括但不限于索引等。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="一摞python风格的纸牌"><a href="#一摞python风格的纸牌" class="headerlink" title="一摞python风格的纸牌"></a>一摞python风格的纸牌</h2><p>此部分作者用十几行代码展示了，python特殊方法的用法，通过这个例子我们可以看到作者大大非常强大。</p>
+<ul>
+<li><p>首先，作者调用了collections的namedtuple方法，本方法旨在于构建只有少数的属性但是没有方法的对象，并且在这两条语句中我们简单的定义了一个纸牌对象：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> collections</span><br><span class="line"></span><br><span class="line">Card = collections.namedtuple(<span class="string">&quot;Card&quot;</span>, [<span class="string">&#x27;rank&#x27;</span>,<span class="string">&#x27;suit&#x27;</span>])</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>语法：<br><em>collections.namedtuple(typename, field_names, \</em>, verbose=False, rename=False, module=None)*</p>
+<p>其中：</p>
+<p><code>typename</code>：实际上就是你通过<code>namedtuple</code>创建的一个元组的子类的类名，通过这样的方式我们可以初始化各种各样的实例化元组对象。</p>
+<p><code>field_names</code>：类似于字典的<code>key</code>，在这里定义的元组可以通过这样的<code>key</code>去获取里面对应索引位置的元素值，这样的key可以是列表，也可以是用<code>空格、/和逗号</code>这样的分隔符隔开的字符串。</p>
+<p><code>rename</code>：如果<code>rename</code>指定为<code>True</code>，那么你的<code>field_names</code>里面不能包含有<code>非Python标识符，Python中的关键字以及重复的name</code>，如果有，它会默认给你重命名成‘<code>_index</code>’的样式，这个<code>index</code>表示该<code>name</code>在<code>field_names</code>中的索引，例：<code>[&#39;abc&#39;, &#39;def&#39;, &#39;ghi&#39;, &#39;abc&#39;]</code> 将被转换成<code>[&#39;abc&#39;, &#39;_1&#39;, &#39;ghi&#39;, &#39;_3&#39;]</code>。</p>
+<p><strong>注意:在这里我们定义了一个名为Card的对象，里面有rank和suit两个属性，分别用来存储花色和点数，此处定义的是单个纸牌的对象。</strong></p>
+</blockquote>
+</li>
+<li><p>然后使用很多的魔术方法来定义一整个扑克牌的类定义，首先是整个对象的属性部分：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Deck</span>:</span></span><br><span class="line">    ranks = [<span class="built_in">str</span>(n) <span class="keyword">for</span> n <span class="keyword">in</span> <span class="built_in">list</span>(<span class="built_in">range</span>(<span class="number">2</span>,<span class="number">11</span>)) + <span class="built_in">list</span>(<span class="string">&quot;JQKA&quot;</span>)]</span><br><span class="line">    suits = <span class="string">&#x27;hongtao heitao meihua fangpian&#x27;</span>.split()</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>博主理解:本处的两个定义太那个了，简直就是集大成。rank的列表定义使用了一行的for循环，一行for循环的基本语法格式为：</p>
+<ul>
+<li>[expression for x in L]</li>
+</ul>
+<p>另外在迭代器的构建方面，作者使用了非常简约的两个列表相加的模式，秒啊！（可能也是我太菜了</p>
+<p>在定义suits时，作者使用了split构建字符串列表，常规操作，不过很简约。</p>
+</blockquote>
+</li>
+<li><p>最后就是是就是使用魔术方法来进行方法的书写部分，然后来见证奇迹：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Deck</span>:</span></span><br><span class="line">    ranks = [<span class="built_in">str</span>(n) <span class="keyword">for</span> n <span class="keyword">in</span> <span class="built_in">list</span>(<span class="built_in">range</span>(<span class="number">2</span>,<span class="number">11</span>)) + <span class="built_in">list</span>(<span class="string">&quot;JQKA&quot;</span>)]</span><br><span class="line">    suits = <span class="string">&#x27;hongtao heitao meihua fangpian&#x27;</span>.split()</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        self._cards = [Card(rank, suit) <span class="keyword">for</span> suit <span class="keyword">in</span> self.suits <span class="keyword">for</span> rank <span class="keyword">in</span> self.ranks] + [Card(<span class="string">&#x27;wang&#x27;</span>, suit) <span class="keyword">for</span> suit <span class="keyword">in</span> [<span class="string">&#x27;big&#x27;</span>,<span class="string">&#x27;small&#x27;</span>]]</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__len__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">len</span>(self._cards)</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__getitem__</span>(<span class="params">self,position</span>):</span></span><br><span class="line">        <span class="keyword">return</span> self._cards[position]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>首先我们通过collections内的namedtuple方法，可以很轻松的得到一个单个纸牌对象：</p>
+<p><img src="/2021/12/11/%E6%B5%81%E7%95%85%E7%9A%84Python-%E7%AC%AC%E4%B8%80%E7%AB%A0-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/1_1.png" alt></p>
+</li>
+<li><p>通过魔术方法定义的对象使我们可以直接调用<strong>len()</strong>来查看一叠纸牌有多少张：</p>
+<p><img src="/2021/12/11/%E6%B5%81%E7%95%85%E7%9A%84Python-%E7%AC%AC%E4%B8%80%E7%AB%A0-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/1_2.png" alt></p>
+</li>
+<li><p>同时我们也可以进行诸如，索引，随机选择，切片，迭代等通常我们在python内置数据结构中使用的很多功能，这些都是由<strong>getitem</strong>提供的：</p>
+<p><img src="/2021/12/11/%E6%B5%81%E7%95%85%E7%9A%84Python-%E7%AC%AC%E4%B8%80%E7%AB%A0-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/1_3.png" alt></p>
+</li>
+<li><p>我们使用特殊方法的两个好处：</p>
+<ul>
+<li>作为类的用户我们不必再去思考我们造轮子制造出来的函数方法，比如如何取到我们对象的长度，到底我们定义的是什么名字。</li>
+<li>可以更加方便地使用python的标准库进行开发，比如random，我们可以直接把对象作为参数进行调用。</li>
+</ul>
+</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">ShengyueJiang</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://example.com/2021/12/11/%E6%B5%81%E7%95%85%E7%9A%84Python-%E7%AC%AC%E4%B8%80%E7%AB%A0-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">http://example.com/2021/12/11/%E6%B5%81%E7%95%85%E7%9A%84Python-%E7%AC%AC%E4%B8%80%E7%AB%A0-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%B5%81%E7%95%85%E7%9A%84Python/">流畅的Python</a></div><div class="post_share"><div class="social-share" data-image="https://images.idgesg.net/images/article/2017/08/python-100732474-large.3x2.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button button--animated"><i class="fas fa-qrcode"></i> Donate</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src="/img/wechat.jpg" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.jpg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2021/12/11/%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E8%B5%84%E6%96%99/"><img class="next-cover" src="https://www.manpingou.com/uploads/allimg/190301/25-1Z301141K5147.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">高级程序设计资料</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar_img.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">ShengyueJiang</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">14</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">6</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">3</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="http://shengyuejiang.live/"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="/shengyuejiang@126.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">完全就是会慢慢更新的一种状态。</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#python%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.</span> <span class="toc-text">python数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E6%91%9Epython%E9%A3%8E%E6%A0%BC%E7%9A%84%E7%BA%B8%E7%89%8C"><span class="toc-number">1.1.</span> <span class="toc-text">一摞python风格的纸牌</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/12/11/%E6%B5%81%E7%95%85%E7%9A%84Python-%E7%AC%AC%E4%B8%80%E7%AB%A0-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="流畅的Python-第一章-学习笔记"><img src="https://images.idgesg.net/images/article/2017/08/python-100732474-large.3x2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="流畅的Python-第一章-学习笔记"/></a><div class="content"><a class="title" href="/2021/12/11/%E6%B5%81%E7%95%85%E7%9A%84Python-%E7%AC%AC%E4%B8%80%E7%AB%A0-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="流畅的Python-第一章-学习笔记">流畅的Python-第一章-学习笔记</a><time datetime="2021-12-11T03:21:56.000Z" title="Created 2021-12-11 11:21:56">2021-12-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/12/11/%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E8%B5%84%E6%96%99/" title="高级程序设计资料"><img src="https://www.manpingou.com/uploads/allimg/190301/25-1Z301141K5147.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="高级程序设计资料"/></a><div class="content"><a class="title" href="/2021/12/11/%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E8%B5%84%E6%96%99/" title="高级程序设计资料">高级程序设计资料</a><time datetime="2021-12-11T02:11:43.000Z" title="Created 2021-12-11 10:11:43">2021-12-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/12/06/%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95%E9%A2%98%E7%9B%AE%E5%88%86%E6%9E%90/" title="数理统计期末考试题目分析"><img src="https://www.manpingou.com/uploads/allimg/190301/25-1Z301141K5147.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数理统计期末考试题目分析"/></a><div class="content"><a class="title" href="/2021/12/06/%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95%E9%A2%98%E7%9B%AE%E5%88%86%E6%9E%90/" title="数理统计期末考试题目分析">数理统计期末考试题目分析</a><time datetime="2021-12-06T02:13:56.000Z" title="Created 2021-12-06 10:13:56">2021-12-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/12/03/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%90%B4%E6%81%A9%E8%BE%BE-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E7%AC%AC%E4%B9%9D%E7%AB%A0/" title="机器学习吴恩达-学习笔记-第九章"><img src="https://tse1-mm.cn.bing.net/th/id/R-C.d161559094de6c0e951a5c6201aafab0?rik=PL6M3XvzXROPcA&amp;riu=http%3a%2f%2fupload.iheima.com%2f2017%2f0322%2f1490172036151.jpg&amp;ehk=WnQ45Imo%2fvJmy%2b5chG7xTZnqZuUskaa4mzjiS8u6VXg%3d&amp;risl=&amp;pid=ImgRaw&amp;r=0" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="机器学习吴恩达-学习笔记-第九章"/></a><div class="content"><a class="title" href="/2021/12/03/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%90%B4%E6%81%A9%E8%BE%BE-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E7%AC%AC%E4%B9%9D%E7%AB%A0/" title="机器学习吴恩达-学习笔记-第九章">机器学习吴恩达-学习笔记-第九章</a><time datetime="2021-12-03T02:02:08.000Z" title="Created 2021-12-03 10:02:08">2021-12-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/11/27/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%90%B4%E6%81%A9%E8%BE%BE-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E7%AC%AC%E5%85%AB%E7%AB%A0/" title="机器学习吴恩达-学习笔记-第八章"><img src="https://tse1-mm.cn.bing.net/th/id/R-C.d161559094de6c0e951a5c6201aafab0?rik=PL6M3XvzXROPcA&amp;riu=http%3a%2f%2fupload.iheima.com%2f2017%2f0322%2f1490172036151.jpg&amp;ehk=WnQ45Imo%2fvJmy%2b5chG7xTZnqZuUskaa4mzjiS8u6VXg%3d&amp;risl=&amp;pid=ImgRaw&amp;r=0" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="机器学习吴恩达-学习笔记-第八章"/></a><div class="content"><a class="title" href="/2021/11/27/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%90%B4%E6%81%A9%E8%BE%BE-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E7%AC%AC%E5%85%AB%E7%AB%A0/" title="机器学习吴恩达-学习笔记-第八章">机器学习吴恩达-学习笔记-第八章</a><time datetime="2021-11-27T01:25:29.000Z" title="Created 2021-11-27 09:25:29">2021-11-27</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://images.idgesg.net/images/article/2017/08/python-100732474-large.3x2.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2021 By ShengyueJiang</div><div class="footer_custom_text">记录生活，靠近自己</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">Local search</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.2
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container:not\([display]\)').forEach(node => {
+            const target = node.parentNode
+            if (target.nodeName.toLowerCase() === 'li') {
+              target.parentNode.classList.add('has-jax')
+            } else {
+              target.classList.add('has-jax')
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'GJrh13JiTtanCWHn8gbpbgjt-gzGzoHsz',
+      appKey: 'VFhEDzVfXjdMDlxm4NcfP7ps',
+      placeholder: 'Please leave your footprints',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: true,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: true,
+      path: window.location.pathname,
+      requiredFields: ["nick,mail"],
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-show-text.min.js" data-mobile="true" data-text="Sloth,Anger,Lust,Gluttony,Pride,Avarice,Envy" data-fontsize="15px" data-random="true" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
