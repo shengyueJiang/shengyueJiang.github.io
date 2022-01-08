@@ -54,31 +54,6 @@
     
     
     <entry>
-      <title>高级程序设计资料</title>
-      <link href="/2021/12/11/%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E8%B5%84%E6%96%99/"/>
-      <url>/2021/12/11/%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E8%B5%84%E6%96%99/</url>
-      
-        <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在本部分中，只把老师PPT上的部分实例代码拿了过来，关于基础语法的问题还是需要自己了解，本文主要详细介绍关于数据分析与挖掘部分的知识点。</p><h1 id="实例1：温度转换"><a href="#实例1：温度转换" class="headerlink" title="实例1：温度转换"></a>实例1：温度转换</h1><p><img src="/2021/12/11/%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E8%B5%84%E6%96%99/wenduzhuanhuan.png" alt></p><h1 id="实例2：身体质量指数BMI"><a href="#实例2：身体质量指数BMI" class="headerlink" title="实例2：身体质量指数BMI"></a>实例2：身体质量指数BMI</h1><p><img src="/2021/12/11/%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E8%B5%84%E6%96%99/shentizhiliang.png" alt></p><h1 id="实例3：圆周率计算"><a href="#实例3：圆周率计算" class="headerlink" title="实例3：圆周率计算"></a>实例3：圆周率计算</h1><p><img src="/2021/12/11/%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E8%B5%84%E6%96%99/pai.png" alt></p><h1 id="Pandas的数据分析"><a href="#Pandas的数据分析" class="headerlink" title="Pandas的数据分析"></a>Pandas的数据分析</h1><h2 id="pandas的引用"><a href="#pandas的引用" class="headerlink" title="pandas的引用"></a>pandas的引用</h2><ul><li><strong>import pandas as pd</strong></li><li><strong>form pandas import</strong> *</li></ul><blockquote><p>注意两种引用方法的不同，当我们使用这两种方法引用的时候，我们在编写代码的时候调用函数的写法：</p><ul><li>pd.read()</li><li>read()</li></ul><p>当我在调用相同的函数的时候，第一种引用需要加上库名，但是第二种却不用。</p></blockquote><h2 id="pandas的两个数据类型"><a href="#pandas的两个数据类型" class="headerlink" title="pandas的两个数据类型"></a>pandas的两个数据类型</h2><p>pandas中有两个数据类型分别是：</p><ul><li>Series：一种系列</li><li>DataFrame：一种数据框</li></ul><p>pandas都是基于上述数据类型的各种操作</p><blockquote><p>在这里我们明确一下，Numpy和Pandas两个库的应用的不同方向以免混淆。</p><ul><li>Nupmy：更关注数据结构的表达而不是数据的应用，例如Numpy更加关注矩阵的维数，以及矩阵的秩等各种数据相互间关系的性质。</li><li>Pandas：更关注数据间的操作以及数据的应用的功能。</li></ul></blockquote><h2 id="Series数据类型的详解"><a href="#Series数据类型的详解" class="headerlink" title="Series数据类型的详解"></a>Series数据类型的详解</h2><ul><li><strong>Series是一种一维的结构，类似于一维列表和ndarray中的一维数组，但是功能比他们要更为强大，Series由两部分组成：索引index和数值values。</strong></li></ul><p>​        <img src="/2021/12/11/%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E8%B5%84%E6%96%99/series.png" alt></p><ul><li><p>在Series类型中，我们可以自己定义索引的内容，可以在初始化的时候通过传参的方式来进行定义:</p><p><img src="/2021/12/11/%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E8%B5%84%E6%96%99/index.png" alt></p></li><li><p>series类型可以从以下类型创建：</p><p><img src="/2021/12/11/%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E8%B5%84%E6%96%99/class.png" alt></p></li></ul><h1 id="DataFrame类型详解"><a href="#DataFrame类型详解" class="headerlink" title="DataFrame类型详解"></a>DataFrame类型详解</h1><ul><li><strong>Data更像是表格样式的结构，我们拥有行和列的部分可以通过行列操作数据</strong>：</li></ul><p>​    <img src="/2021/12/11/%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E8%B5%84%E6%96%99/data.png" alt></p><ul><li><p>在DataFrame表格中，我们的行列索引和维数都有自己的名字，分别是：</p><p><img src="/2021/12/11/%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E8%B5%84%E6%96%99/data_index.png" alt></p></li></ul><h1 id="基于Sklearn的数据挖掘"><a href="#基于Sklearn的数据挖掘" class="headerlink" title="基于Sklearn的数据挖掘"></a>基于Sklearn的数据挖掘</h1>]]></content>
-      
-      
-      <categories>
-          
-          <category> 期末考试复习资料 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 高级程序设计 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>数理统计期末考试题目分析</title>
       <link href="/2021/12/06/%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95%E9%A2%98%E7%9B%AE%E5%88%86%E6%9E%90/"/>
       <url>/2021/12/06/%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95%E9%A2%98%E7%9B%AE%E5%88%86%E6%9E%90/</url>
