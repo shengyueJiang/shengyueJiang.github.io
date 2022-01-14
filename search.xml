@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Anaconda常用命令总结</title>
+      <link href="/2022/01/08/Anaconda%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/"/>
+      <url>/2022/01/08/Anaconda%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Anaconda命令总结"><a href="#Anaconda命令总结" class="headerlink" title="Anaconda命令总结"></a>Anaconda命令总结</h1><h2 id="配置Anaconda环境变量"><a href="#配置Anaconda环境变量" class="headerlink" title="配置Anaconda环境变量"></a>配置Anaconda环境变量</h2><p>如果想从系统的命令行环境直接进入Anaconda 需要配置环境变量，配置完成后就可以直接在系统的命令行键入<code>activate</code>进入。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ROOT\anaconda</span><br><span class="line">ROOT\anaconda\Scripts</span><br><span class="line">ROOT\anaconda\Library\bin</span><br></pre></td></tr></table></figure><h2 id="管理conda"><a href="#管理conda" class="headerlink" title="管理conda"></a>管理conda</h2><h3 id="查看conda版本信息"><a href="#查看conda版本信息" class="headerlink" title="查看conda版本信息"></a>查看conda版本信息</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda --version</span><br></pre></td></tr></table></figure><h3 id="升级当前版本的conda"><a href="#升级当前版本的conda" class="headerlink" title="升级当前版本的conda"></a>升级当前版本的conda</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda update conda</span><br></pre></td></tr></table></figure><h2 id="管理环境"><a href="#管理环境" class="headerlink" title="管理环境"></a>管理环境</h2><h3 id="创建一个环境"><a href="#创建一个环境" class="headerlink" title="创建一个环境"></a>创建一个环境</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda create -n name python=x.x</span><br></pre></td></tr></table></figure><blockquote><p>name：环境的名字</p><p>python：python的版本（不指定会默认安装conda所装的那个版本的python）</p></blockquote><h2 id="删除虚拟环境"><a href="#删除虚拟环境" class="headerlink" title="删除虚拟环境"></a>删除虚拟环境</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda remove --name envname --all</span><br></pre></td></tr></table></figure><h2 id="查看环境列表"><a href="#查看环境列表" class="headerlink" title="查看环境列表"></a>查看环境列表</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda env list</span><br></pre></td></tr></table></figure><blockquote><p> 其中<code>*</code>标注的是目前所处的环境，默认在base环境。</p></blockquote><h2 id="切换环境"><a href="#切换环境" class="headerlink" title="切换环境"></a>切换环境</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">activate envname</span><br></pre></td></tr></table></figure><h2 id="复制一个环境"><a href="#复制一个环境" class="headerlink" title="复制一个环境"></a>复制一个环境</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda create -n newenv --clone env</span><br></pre></td></tr></table></figure><h2 id="分享环境"><a href="#分享环境" class="headerlink" title="分享环境"></a>分享环境</h2><blockquote><p>想把当前的环境配置分享，快速建立一个与你一模一样的环境来共同开发验。</p></blockquote><p>首先通过<code>activate target_env</code>要分享的环境<code>target_env</code>，然后输入下面的命令会在当前工作目录下生成一个<code>environment.yml</code>文件，</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda env export &gt; environment.yml</span><br></pre></td></tr></table></figure><p>然后通过使用下面命令就能创建环境：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda env create -f environment.yml</span><br></pre></td></tr></table></figure><h1 id="包管理"><a href="#包管理" class="headerlink" title="包管理"></a>包管理</h1><h2 id="列举所有当前环境的包"><a href="#列举所有当前环境的包" class="headerlink" title="列举所有当前环境的包"></a>列举所有当前环境的包</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda list</span><br></pre></td></tr></table></figure><h2 id="查看其它环境中的包"><a href="#查看其它环境中的包" class="headerlink" title="查看其它环境中的包"></a>查看其它环境中的包</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda list -n your_env_name</span><br></pre></td></tr></table></figure><h2 id="为特定环境安装某个包"><a href="#为特定环境安装某个包" class="headerlink" title="为特定环境安装某个包"></a>为特定环境安装某个包</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install -n env_name package_name</span><br></pre></td></tr></table></figure><h2 id="安装特定版本的包"><a href="#安装特定版本的包" class="headerlink" title="安装特定版本的包"></a>安装特定版本的包</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install package=version</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 命令总结 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Anaconda命令 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>流畅的Python-第二章-学习笔记</title>
       <link href="/2021/12/11/%E6%B5%81%E7%95%85%E7%9A%84Python-%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
       <url>/2021/12/11/%E6%B5%81%E7%95%85%E7%9A%84Python-%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
