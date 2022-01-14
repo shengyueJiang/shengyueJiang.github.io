@@ -4,6 +4,38 @@
   
     
     <entry>
+      <title>Pandas笔记(一)</title>
+      <link href="/2022/01/14/Pandas%E7%AC%94%E8%AE%B0-%E4%B8%80/"/>
+      <url>/2022/01/14/Pandas%E7%AC%94%E8%AE%B0-%E4%B8%80/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> Python学习笔记 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Jupter Notebook 使用整理</title>
+      <link href="/2022/01/14/Jupter-Notebook-%E4%BD%BF%E7%94%A8%E6%95%B4%E7%90%86/"/>
+      <url>/2022/01/14/Jupter-Notebook-%E4%BD%BF%E7%94%A8%E6%95%B4%E7%90%86/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Anaconda常用命令总结</title>
       <link href="/2022/01/08/Anaconda%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/"/>
       <url>/2022/01/08/Anaconda%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/</url>
@@ -13,14 +45,14 @@
       
       <categories>
           
-          <category> 命令总结 </category>
+          <category> 编译环境小技巧 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> Anaconda命令 </tag>
+            <tag> Anaconda </tag>
             
         </tags>
       
